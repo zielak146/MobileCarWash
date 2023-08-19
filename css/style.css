@@ -52,66 +52,69 @@ body {
 }
 
 .burger-btn {
-  position: absolute;
-  top: 5px;
+  position: fixed;
+  top: 10px;
   right: 20px;
   padding: 0.3em;
-  color: white;
-  font-size: 40px;
-  background: none;
+  font-size: 36px;
+  color: rgb(25, 221, 71);
   border: 1px solid transparent;
   cursor: pointer;
-  z-index: 101;
-  display: none;
+  background: none;
+  z-index: 100;
 }
 .burger-btn:focus {
   outline: none;
-  color: chartreuse;
-  border: 1px solid rgba(249, 248, 248, 0.5);
+  border: 1px solid rgba(5, 193, 33, 0.5);
   border-radius: 8px;
 }
 
 .nav {
   position: fixed;
   top: 0;
-  background-color: rgb(12, 110, 48);
-  height: 80px;
+  height: 100vh;
   width: 100%;
-  z-index: 100;
+  background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/nav3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 90;
+  transform: translateY(-100%);
   display: flex;
+  transition: 0.8s;
   justify-content: center;
   align-items: center;
 }
-
-.nav-items {
+.nav--active {
+  transform: translateY(0);
+}
+.nav__items {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
-  margin: 10px 0;
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
 }
-.nav-items li {
-  z-index: 2;
-  list-style: none;
-}
-.nav-items a {
-  cursor: pointer;
-  display: inline-block;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 5px;
-  letter-spacing: 1px;
-  font-size: 18px;
-  padding: 0.7rem 1.5rem;
+.nav__item {
+  position: relative;
   text-decoration: none;
+  display: block;
   color: white;
-  transition: background-color 0.4s;
+  padding: 0.7em 2em;
+  border-radius: 8px;
+  font-size: 1.4rem;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background-color: white;
+  content: "";
+  transform: scaleY(0);
 }
 
-.nav-items a:hover {
+.nav__items a:hover {
   background-color: rgb(10, 165, 67);
 }
 
@@ -166,19 +169,6 @@ body {
   font-size: 1.3rem;
 }
 
-.logo {
-  position: absolute;
-  top: 20%;
-  left: 88%;
-  transform: translate(-50%, -50%);
-  background-image: url(../img/logo.png);
-  height: 350px;
-  width: 350px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .about {
   position: relative;
   overflow: hidden;
@@ -189,6 +179,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
   border-radius: 15px;
 }
 .about-us__box-img {
@@ -515,6 +506,16 @@ body {
 }
 
 @media (min-width: 767px) {
+  .nav {
+    background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/nav2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .nav__item {
+    font-size: 2rem;
+    margin: 0.5em;
+  }
   .services .services-cards {
     display: flex;
     flex-wrap: wrap;
@@ -525,15 +526,7 @@ body {
     width: 30%;
   }
 }
-@media (max-width: 992px) {
-  .burger-btn {
-    display: flex;
-  }
-}
 @media (min-width: 992px) {
-  .nav-items {
-    display: flex;
-  }
   .reviews__cards {
     flex-direction: row;
     justify-content: center;
