@@ -77,7 +77,7 @@ body {
   background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/nav3.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   z-index: 90;
   transform: translateY(-100%);
   display: flex;
@@ -94,7 +94,7 @@ body {
   background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/drops2.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .nav__items {
   display: flex;
@@ -215,7 +215,7 @@ body {
   background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/car3.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .services .section-heading {
   color: white;
@@ -294,7 +294,7 @@ body {
 }
 .services .services-card__info-heading {
   margin-top: 1em;
-  color: white;
+  color: rgb(25, 221, 71);
   text-align: center;
   font-size: 2rem;
 }
@@ -303,9 +303,9 @@ body {
   color: white;
   font-size: 1.4rem;
   padding: 0.5em;
-  list-style: none;
 }
 .services .services-card__info-list li {
+  list-style: circle;
   margin-bottom: 0.5em;
 }
 .services .services-card__info-text {
@@ -359,7 +359,7 @@ body {
   background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/drops2.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   padding: 10em 2em;
 }
 .hero-img .wrapper {
@@ -459,7 +459,7 @@ body {
   background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/contact2.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .contact .section-heading {
   color: white;
@@ -499,7 +499,7 @@ body {
 .contact__box-link {
   color: white;
   font-size: 2rem;
-  margin: 0.5em;
+  margin-right: 0.5em;
   transition: color 0.4s;
 }
 .contact__box-link:hover {
@@ -507,8 +507,15 @@ body {
 }
 
 .footer {
-  background-color: black;
-  height: 100%;
+  background-color: rgb(12, 110, 48);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer h2 {
+  text-align: center;
+  color: white;
 }
 
 @media (min-width: 767px) {
@@ -516,7 +523,7 @@ body {
     background-image: linear-gradient(45deg, rgba(14, 27, 47, 0.75), rgba(4, 128, 84, 0.75)), url("../img/drops2.jpeg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll;
   }
   .nav__item {
     text-transform: uppercase;
